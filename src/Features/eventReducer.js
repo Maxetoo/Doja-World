@@ -31,7 +31,6 @@ export const playMusic = createAsyncThunk(
     try {
       for (const audio of audios) {
         audio.onplay = (e) => {
-          console.log('audio is on play')
           for (const currentAudio of audios) {
             if (currentAudio !== e.target) {
               currentAudio.pause()
@@ -73,7 +72,10 @@ const eventSlice = createSlice({
       state.musicPlayId = action.payload
     },
     displayAndPlayMusic: (state, action) => {
-      state.currentlyPlaying = action.payload
+      // state.currentlyPlaying = action.payload
+      const { currentlyPlaying, musicPlayId } = action.payload
+      state.musicPlayId = musicPlayId
+      state.currentlyPlaying = currentlyPlaying
       state.showMusicPage = true
     },
     pauseMusic: (state, action) => {

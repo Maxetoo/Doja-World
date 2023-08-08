@@ -19,8 +19,14 @@ const RecommendList = ({ image, id, artists, title, songUrl }) => {
             src={image}
             alt={title}
             onClick={() => {
-              dispatch(getMusicPlayId(id))
-              dispatch(displayAndPlayMusic(songUrl))
+              // dispatch(getMusicPlayId(id))
+              // dispatch(displayAndPlayMusic(songUrl))
+              dispatch(
+                displayAndPlayMusic({
+                  currentlyPlaying: songUrl,
+                  musicPlayId: id,
+                })
+              )
             }}
           />
         </Link>

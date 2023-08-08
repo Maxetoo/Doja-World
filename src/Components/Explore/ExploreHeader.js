@@ -38,8 +38,14 @@ const ExploreHeader = () => {
           <div
             className='song-icon'
             onClick={() => {
-              dispatch(getMusicPlayId(3))
-              dispatch(displayAndPlayMusic(musicData[2].songUrl))
+              //   dispatch(getMusicPlayId(3))
+              //   dispatch(displayAndPlayMusic(musicData[2].songUrl))
+              dispatch(
+                displayAndPlayMusic({
+                  currentlyPlaying: musicData[2].songUrl,
+                  musicPlayId: 3,
+                })
+              )
             }}
           >
             <FaPlay />

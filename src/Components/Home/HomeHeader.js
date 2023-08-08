@@ -35,8 +35,14 @@ const HomeHeader = () => {
             <button
               type='button'
               onClick={() => {
-                dispatch(getMusicPlayId(id))
-                dispatch(displayAndPlayMusic(songUrl))
+                // dispatch(getMusicPlayId(id))
+                // dispatch(displayAndPlayMusic(songUrl))
+                dispatch(
+                  displayAndPlayMusic({
+                    currentlyPlaying: songUrl,
+                    musicPlayId: id,
+                  })
+                )
               }}
             >
               Start Now

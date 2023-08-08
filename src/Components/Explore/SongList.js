@@ -29,8 +29,14 @@ const SongList = ({ image, artists, title, id, songUrl }) => {
         <div
           className='image-desc'
           onClick={() => {
-            dispatch(getMusicPlayId(id))
-            dispatch(displayAndPlayMusic(songUrl))
+            // dispatch(getMusicPlayId(id))
+            // dispatch(displayAndPlayMusic(songUrl))
+            dispatch(
+              displayAndPlayMusic({
+                currentlyPlaying: songUrl,
+                musicPlayId: id,
+              })
+            )
           }}
         >
           <img src={image} alt={title} />

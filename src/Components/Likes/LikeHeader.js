@@ -42,8 +42,14 @@ const LikeHeader = () => {
             className='song-icon'
             onClick={() => {
               if (likedSongs.length !== 0) {
-                dispatch(getMusicPlayId(id))
-                dispatch(displayAndPlayMusic(songUrl))
+                // dispatch(getMusicPlayId(id))
+                // dispatch(displayAndPlayMusic(songUrl))
+                dispatch(
+                  displayAndPlayMusic({
+                    currentlyPlaying: songUrl,
+                    musicPlayId: id,
+                  })
+                )
               }
             }}
           >
