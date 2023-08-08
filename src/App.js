@@ -1,25 +1,55 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react'
+import {
+  FirstPage,
+  SlidePage,
+  HomePage,
+  ExplorePage,
+  LikesPage,
+  SearchPage,
+  NavSection,
+  MusicPage,
+  AboutPage,
+} from './Pages'
+import BgMusicPlay from './Components/Music/BgMusicPlay'
+import { useSelector, useDispatch } from 'react-redux'
+import { Routes, Route } from 'react-router-dom'
+import { getRecommendList } from './Features/eventReducer'
 
-function App() {
+const App = () => {
+  const { toNextPage, musicList } = useSelector((store) => store.eventSlice)
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(getRecommendList())
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <React.Fragment>
+      <main className='main-app'>
+        {!toNextPage ? (
+          <FirstPage />
+        ) : (
+          <section className='main-app-section'>
+            <SlidePage />
+            <Routes>
+              <Route path='/' element={<HomePage />} />
+              <Route path='/explore' element={<ExplorePage />} />
+              <Route path='/likes' element={<LikesPage />} />
+              <Route path='/search' element={<SearchPage />} />
+              <Route path='/about' element={<AboutPage />} />
+            </Routes>
+            <MusicPage />
+            <BgMusicPlay />
+            <NavSection />
+          </section>
+        )}
+      </main>
+      <div className='not-availabe'>
+        <h3>Opps!</h3>
+        <p>Sorry, This is only available on small screen</p>
+      </div>
+    </React.Fragment>
+  )
 }
 
-export default App;
+export default App
