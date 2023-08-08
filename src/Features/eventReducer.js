@@ -45,6 +45,7 @@ export const playMusic = createAsyncThunk(
 
       return payload
     } catch (error) {
+      thunkAPI.dispatch(playNext())
       console.log(error)
     }
   }
@@ -195,7 +196,7 @@ const eventSlice = createSlice({
         state.currentlyPlaying = action.payload
       })
       .addCase(playMusic.rejected, (state, action) => {
-        console.log(action.error)
+        state.musicIsLoading = false
       })
   },
 })

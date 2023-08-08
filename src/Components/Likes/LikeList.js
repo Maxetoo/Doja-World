@@ -14,8 +14,6 @@ const LikeList = ({ image, title, artists, id, songUrl }) => {
         <div
           className='image-desc'
           onClick={() => {
-            // dispatch(getMusicPlayId(id))
-            // dispatch(displayAndPlayMusic(songUrl))
             dispatch(
               displayAndPlayMusic({
                 currentlyPlaying: songUrl,

@@ -4,6 +4,7 @@ export const musicData = [
     id: 1,
     title: 'Woman',
     artists: 'Doja cat',
+    recommended: true,
     songUrl:
       'https://files.ceenaija.com/wp-content/uploads/music/2023/02/Doja_Cat_-_Woman_CeeNaija.com_.mp3',
     image: DojaStars,
@@ -13,7 +14,6 @@ export const musicData = [
     id: 2,
     artists: 'Doja cat X SZA',
     title: 'Kiss Me More (feat. SZA)',
-    recommended: true,
     songUrl: 'https://musicdownload.cc/files/download/id/331',
     image: DojaKissmeMore,
   },
@@ -28,7 +28,6 @@ export const musicData = [
     id: 4,
     artists: 'Doja cat',
     title: 'Say So',
-    recommended: true,
     songUrl: 'https://musicdownload.cc/files/download/id/587',
     image: DojaStars,
   },
@@ -45,7 +44,6 @@ export const musicData = [
     title: 'Get into it(Yuh)',
     songUrl:
       'https://www.thinknews.com.ng/wp-content/uploads/2021/06/Doja_Cat_-_Get_Into_It_Yuh_.mp3',
-    recommended: true,
     image:
       'https://i1.sndcdn.com/artworks-gaaxttGyVN2znu7w-z6zW8w-t500x500.jpg',
   },
@@ -53,6 +51,7 @@ export const musicData = [
     id: 7,
     artists: 'Doja cat X Saweetie',
     title: 'Best Friend',
+    recommended: true,
     songUrl:
       'https://www.thinknews.com.ng/wp-content/uploads/2021/01/Saweetie_Ft_Doja_-_Best_Friend.mp3',
     image:
@@ -62,7 +61,6 @@ export const musicData = [
     id: 8,
     artists: 'Doja cat',
     title: 'Like that',
-    recommended: true,
     songUrl: 'https://musicdownload.cc/files/download/id/586',
     image: 'https://i1.sndcdn.com/artworks-EWCN4of5KNry-0-t500x500.jpg',
   },
@@ -112,6 +110,7 @@ export const musicData = [
     id: 14,
     artists: 'Doja cat X Ariana Grande',
     title: "I Don't Do Drugs",
+    recommended: true,
     songUrl:
       'https://db.soloplay.com.ng/wp-content/uploads/2021/06/Doja_Cat_Ft_Ariana_Grande_-_I_Dont_Do_Drugs_Soloplay.ng.mp3',
     image: DojaStars,
@@ -144,6 +143,7 @@ export const musicData = [
     id: 18,
     artists: 'Chloe X Halle & Doja Cat',
     title: 'Do It (Remix)',
+    recommended: true,
     songUrl:
       'https://luvmp.com/wp-content/uploads/2020/09/Chloe_x_Halle_ft_Doja_Cat_Mulatto_City_Girls_-_Do_It_Remix_Luvmp.com_.mp3',
     image:
